@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    Add a New PDG Task
+  </div>
+  <div class="card-body">
+    <form (submit)="addTask()">
+      <div class="form-group">
+        <label for="title">Task Name: </label>
+        <input type="text" class="form-control" [(ngModel)]="name" name="name">
+      </div>
+      <div class="form-group">
+          <label for="description">Task Description: </label>
+          <input type="textarea" class="form-control" [(ngModel)]="description" name="description">
+      </div>
+      <div class="form-group">
+        <label class="center-block" for="priority">Task Priority:</label>
+        <select class="form-control" [(ngModel)]="priority" name="priority">
+          <option *ngFor="let p of priorities" [value]="p">{{p}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Due Date: </label>
+        <input type="date" class="form-control" [(ngModel)]="dueDate" name="dueDate">        
+      </div>
+      <input type="submit" class="btn btn-primary" value="Add New PDG Task">
+    </form>
+  </div>
+</div>

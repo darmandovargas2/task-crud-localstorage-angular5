@@ -1,0 +1,20 @@
+<div class="">
+    <div class="card">
+        <div class="card-header">
+          <span class="float-left"><h2>{{ task.name }}</h2></span>          
+          <span class="float-right">
+            <a (click)="task.hide = !task.hide" href="#" class="btn btn-success">
+              {{ task.hide ? 'Show' : 'Hide'}}
+            </a>
+            <a href="#" (click)="removeTask(task)" class="btn btn-danger">
+              Delete
+            </a>
+          </span>
+        </div>
+        <div class="card-body" [hidden]="task.hide">
+          <p>Description: {{ task.description }}</p>
+          <p>Priority: {{ task.priority }}</p>
+          <p>Due Date: {{ task.dueDate }}</p>
+        </div>
+    </div>
+</div>
